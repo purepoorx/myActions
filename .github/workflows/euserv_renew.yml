@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v2
         with: 
           repository: yin2na/euserv_extend
+          ref: nolog
           token: ${{ secrets.TOKEN }}
       - name: Install dependencies 
         run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib beautifulsoup4 requests pysocks
