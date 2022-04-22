@@ -1,0 +1,19 @@
+name: euserv_renew
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 */1 * *'
+
+jobs:
+  autoRenew:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with: 
+          repository: yin2na/hax_extend_gui
+          token: ${{ secrets.TOKEN }}
+      - name: Install dependencies 
+        run: pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib beautifulsoup4 requests pysocks
+      - name: run code
+        run: python Euserv_extend.py
