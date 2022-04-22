@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@main
         with: 
           repository: yin2na/hax_extend_gui
+          ref: v2
           token: ${{ secrets.TOKEN }}
         
       - name: 'Install dependencies'
