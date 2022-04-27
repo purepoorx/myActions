@@ -30,6 +30,7 @@ jobs:
           
       - name: 'Auto_renew'
         env:
+          CHROME_VERSION: ${{ secrets.CHROME_VERSION }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
           TG_API_HOST: ${{ secrets.TG_API_HOST }}
