@@ -1,4 +1,4 @@
-name: 'auto_run'
+name: 'aliyun-tunnel'
 
 on:
   workflow_dispatch:
