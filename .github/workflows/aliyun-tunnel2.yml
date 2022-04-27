@@ -1,0 +1,24 @@
+name: 'auto_run'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 2/3 * * *'
+    
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with: 
+          repository: yin2na/aliyun-tunnel2
+          token: ${{ secrets.TOKEN }}
+      - run: |
+          git config user.name test
+          git config user.email test@mail.io
+          echo $((`cat README.md` + 1)) > README.md
+          cat README.md
+          git commit -am "add 1 time"
+          git push
+   
