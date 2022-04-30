@@ -2,8 +2,8 @@ name: 'Woiden Auto Renew v2'
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 11 */1 * *'
+#   schedule:
+#     - cron: '30 11 */1 * *'
 jobs:
   woiden_renew:
     runs-on: windows-latest
