@@ -36,6 +36,6 @@ jobs:
           TG_API_HOST: ${{ secrets.TG_API_HOST }}
           HAX_USERNAME: ${{ secrets.HAX_USERNAME }}
           HAX_PASSWORD: ${{ secrets.HAX_PASSWORD }}
-#           CHPTCHA_IFRAME1: ${{ secrets.CHPTCHA_IFRAME1 }}
-#           CHPTCHA_IFRAME2: ${{ secrets.CHPTCHA_IFRAME2 }}
-        run: python hax_extend_gui_v2.py
+          CHPTCHA_IFRAME1: ${{ secrets.CHPTCHA_IFRAME1 }}
+          CHPTCHA_IFRAME2: ${{ secrets.CHPTCHA_IFRAME2 }}
+        run: python hax_extend_gui.py
