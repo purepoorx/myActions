@@ -2,8 +2,8 @@ name: 'HAX Auto Renew v2'
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 11 */1 * *'
+#   schedule:
+#     - cron: '0 11 */1 * *'
 jobs:
   hax_renew:
     runs-on: windows-latest
