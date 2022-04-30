@@ -1,0 +1,41 @@
+name: 'HAX Auto Renew v2'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 11 */1 * *'
+jobs:
+  hax_renew:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with: 
+          repository: yin2na/hax_extend_gui
+          ref: nolog
+          token: ${{ secrets.TOKEN }}
+        
+      - name: 'Install dependencies'
+        run: |
+          pip install -r requirements_v2.txt
+          pip install undetected-chromedriver==3.1.5.post4
+          
+      - name: 'Install ffmpeg'
+        run: |
+          #curl -o ffmpegtest.7z https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-5.0-essentials_build.7z
+          7z x ffmpeg-release-essentials.7z
+          mv ffmpeg-5.0.1-essentials_build/bin/* ./
+          
+      - name: 'set display'
+        run: Set-DisplayResolution -Width 1440 -Height 900 -Force
+          
+      - name: 'Auto_renew'
+        env:
+          CHROME_VERSION: ${{ secrets.CHROME_VERSION }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          TG_API_HOST: ${{ secrets.TG_API_HOST }}
+          HAX_USERNAME: ${{ secrets.HAX_USERNAME }}
+          HAX_PASSWORD: ${{ secrets.HAX_PASSWORD }}
+        run: python hax_extend_gui_v2.py
