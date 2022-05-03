@@ -2,8 +2,8 @@ name: 'aliyun-tunnel4'
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '45 0/3 * * *'
+#   schedule:
+#     - cron: '45 0/3 * * *'
     
 jobs:
   run:
