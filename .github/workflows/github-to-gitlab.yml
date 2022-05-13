@@ -25,7 +25,7 @@ jobs:
       - name: Login Source GitHub
         run: |
           gh --version
-          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          echo "${{ secrets.TOKEN }}" | gh auth login --with-token
           gh auth status
 
       - name: List repos
@@ -40,7 +40,7 @@ jobs:
           source_protocol: https
           source_host: github.com
           source_username: yin2na
-          source_token: ${{ secrets.GITHUB_TOKEN }}
+          source_token: ${{ secrets.TOKEN }}
           dest_protocol: https
           dest_host: gitlab.com
           dest_username: yin2na
