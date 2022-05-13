@@ -46,8 +46,8 @@ jobs:
           dest_username: yin2na
           dest_token: ${{ secrets.DEST_TOKEN_GITLAB }}
           mirror_repos: ${{ steps.list_repos.outputs.repo_list }}
-          lark_webhook: ${{ secrets.LARK_WEBHOOK }}
-          notify_prefix: "GitHub to GitLab"
+          #lark_webhook: ${{ secrets.LARK_WEBHOOK }}
+          #notify_prefix: "GitHub to GitLab"
           ignore_error: "true"
           dest_create_repo_script: |
             # load functions: gitlab_update_project, gitlab_create_project, urlencode
